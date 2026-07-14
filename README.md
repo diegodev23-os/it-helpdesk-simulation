@@ -25,8 +25,9 @@ This project simulates the full lifecycle of an IT support helpdesk using **Jira
   - **Time to Resolution** — 24 hours
 
 **Screenshots:**
-<!-- ![Request types](screenshots/request-types.png) -->
-<!-- ![SLA configuration](screenshots/sla-config.png) -->
+![Hardware Issue request type](screenshots/request-type-hardware.png)
+![SLA - Time to first response](screenshots/sla-first-response.png)
+![SLA - Time to done](screenshots/sla-time-to-done.png)
 
 ## 🎫 Week 2 — Ticket Generation
 <!-- Describe the 3 simulated tickets here once created: hardware boot failure, VPN connection issue, account lockout -->
