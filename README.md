@@ -30,10 +30,39 @@ This project simulates the full lifecycle of an IT support helpdesk using **Jira
 ![SLA - Time to done](screenshots/sla-time-to-done.png)
 
 ## 🎫 Week 2 — Ticket Generation
-<!-- Describe the 3 simulated tickets here once created: hardware boot failure, VPN connection issue, account lockout -->
+Created 2 fictional customer profiles (Maria Gomez, Carlos Ruiz) and generated 3 simulated tickets:
+
+| Ticket | Type | Summary | Reporter |
+|--------|------|---------|----------|
+| IHS-3 | Hardware Issue | Laptop won't boot after Windows update | Maria Gomez |
+| IHS-4 | Network Problem | Unable to connect to company VPN | Carlos Ruiz |
+| IHS-5 | Software/Access Issue | Account locked after multiple failed login attempts | Maria Gomez |
 
 ## 🔧 Week 3 — Troubleshooting & Resolution
-<!-- Document each ticket's root cause and resolution steps, with terminal/PowerShell screenshots -->
+Set up a local Ubuntu 26.04 VM (VirtualBox) to simulate hands-on diagnostics for each ticket.
+
+![VM setup - name and OS](screenshots/vm-01-name-os.png)
+![VM setup - unattended install](screenshots/vm-02-unattended-install.png)
+![VM setup - hardware specs](screenshots/vm-03-hardware-specs.png)
+
+**IHS-3 — Boot failure:** Reviewed boot logs and disk/partition health. Ruled out hardware failure and identified a corrupted display driver as the root cause.
+
+![journalctl boot errors](screenshots/ihs3-journalctl-boot-errors.png)
+![lsblk partitions](screenshots/ihs3-lsblk-particiones.png)
+![smartctl check](screenshots/ihs3-smartctl-check.png)
+![IHS-3 resolved in Jira](screenshots/ihs3-resuelto.png)
+
+**IHS-4 — VPN connectivity:** Verified network interface and internet connectivity, then found the VPN profile was missing from the device and reconfigured it.
+
+![nmcli connection check](screenshots/ihs4-nmcli-connection.png)
+![IHS-4 resolved in Jira](screenshots/ihs4-resuelto.png)
+
+**IHS-5 — Account lockout:** Checked authentication logs and lockout status, confirmed no unauthorized access attempts, and reset the failed-attempt counter.
+
+![auth log and faillock check](screenshots/ihs5-authlog-faillock.png)
+![IHS-5 resolved in Jira](screenshots/ihs5-resuelto.png)
+
+All three tickets were resolved within SLA, with internal root-cause notes and customer-facing responses documented directly in Jira.
 
 ## 📊 Week 4 — Analysis & Results
 <!-- Once you export the CSV and build the dashboard, add key metrics here:
