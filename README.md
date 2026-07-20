@@ -65,14 +65,19 @@ Set up a local Ubuntu 26.04 VM (VirtualBox) to simulate hands-on diagnostics for
 All three tickets were resolved within SLA, with internal root-cause notes and customer-facing responses documented directly in Jira.
 
 ## 📊 Week 4 — Analysis & Results
-<!-- Once you export the CSV and build the dashboard, add key metrics here:
-- Average resolution time
-- SLA compliance rate
-- Most common incident type
--->
+Exported the 3 resolved tickets from Jira to CSV and analyzed them with a Python script (pandas + matplotlib), run locally in VS Code.
+
+![All tickets overview in Jira](screenshots/all-tickets-overview.png)
+
+**Key metrics:**
+- Total tickets analyzed: 3
+- Average resolution time: 1.58 hours
+- SLA compliance rate: 100% (all tickets resolved well within the 24h target)
+- Incident types: Hardware Issue, Network Problem, Software/Access Issue (evenly distributed)
+
+![Running the analysis script in VS Code](screenshots/vscode-analysis-run.png)
+
+See [`analyze_tickets.py`](analyze_tickets.py) for the full analysis script.
 
 ## 🚀 Key Takeaways
-<!-- 2-3 sentences on what this project demonstrates about your IT support and analytical skills -->
-
----
-*This project is part of my transition into IT Support / Cloud roles, combining hands-on ITSM practice with data analysis.*
+This project demonstrates the full lifecycle of IT support ticket management — from configuring a service desk and defining SLAs, to hands-on Linux troubleshooting in a virtualized environment, to translating raw ticket data into actionable KPIs using Python. It combines practical IT support skills (Jira, Linux, VirtualBox) with a data-driven mindset, reflecting the kind of Level 2 support role that also contributes to service quality reporting.
